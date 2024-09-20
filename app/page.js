@@ -1,95 +1,46 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
-export default function Home() {
+export default function Login() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
         <Image
+          src="/images/Facebook.png"
+          alt="logo Facebook"
           className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          width={200}
+          height={110}
         />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+        <div className={styles.loginBox}>
+          <div className={styles.loginHeader}>
+            <h2 className={styles.headerTitle}>Entrar no Facebook</h2>
+          </div>
+          <form id="login-form" className={styles.loginForm}>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Email ou telefone"
+              required
+              className={styles.input}
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Senha"
+              required
+              className={styles.input}
+            />
+            <button className={styles.enter} type="submit">Entrar</button>
+            <div className={styles.links}>
+              <a href="#">Esqueceu a senha?</a>
+              <a href="#">Cadastre-se no Facebook</a>
+            </div>
+          </form>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }
